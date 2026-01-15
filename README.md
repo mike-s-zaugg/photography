@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Photography Portfolio
+
+A modern, responsive photography portfolio built with [Next.js](https://nextjs.org), React, and Tailwind CSS. Showcase your work with smooth animations, a masonry gallery layout, and interactive lightbox functionality.
+
+## Features
+
+- **Responsive Masonry Gallery**: Automatically adapts from 1 to 3 columns based on screen size
+- **Interactive Lightbox**: Click on any photo to view full-resolution images with smooth transitions
+- **Smooth Animations**: Fade-in effects with staggered timing using Framer Motion
+- **Fast Image Loading**: Optimized Next.js Image component for automatic optimization
+- **Modern UI**: Dark theme with gradient text and hover effects
+- **Social Integration**: Easy links to Instagram and other platforms
+- **Camera Details**: Display your equipment information (camera, lens)
+
+## Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org) with App Router
+- **UI Library**: [React 19](https://react.dev)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Lightbox**: [Yet Another React Lightbox](https://yet-another-react-lightbox.com/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Language**: TypeScript
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ and npm (or your preferred package manager)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd photography
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Add your photos:
+   - Place your photos (.jpg, .jpeg, .png, .webp) in the `public/photos/` directory
+   - The gallery will automatically detect and display all images
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The page auto-reloads as you make changes to `app/page.tsx` or other components.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Production Build
 
-## Learn More
+Build the project for production:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Linting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run ESLint to check code quality:
 
-## Deploy on Vercel
+```bash
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+photography/
+ app/
+    page.tsx          # Main page with header and gallery integration
+    Gallery.tsx       # Gallery component with lightbox
+    PhotoCard.tsx     # Individual photo card with animation
+    layout.tsx        # Root layout and metadata
+    globals.css       # Global styles
+ public/
+    photos/           # Your portfolio photos (add images here)
+ package.json          # Project dependencies
+ tsconfig.json         # TypeScript configuration
+ tailwind.config.ts    # Tailwind CSS configuration
+ next.config.ts        # Next.js configuration
+```
+
+## Customization
+
+### Update Portfolio Header
+
+Edit `app/page.tsx` to customize:
+- Portfolio title
+- Bio/description
+- Instagram handle
+- Camera equipment details
+
+### Modify Gallery Layout
+
+The gallery columns are responsive:
+- Mobile: 1 column (`sm:columns-1`)
+- Tablet: 2 columns (`sm:columns-2`)
+- Desktop: 3 columns (`lg:columns-3`)
+
+Adjust the column counts in `app/Gallery.tsx` if needed.
+
+### Change Colors and Styling
+
+All styling uses Tailwind CSS classes. Key elements:
+- Dark background: `bg-[#111]`
+- Text gradients and hover effects in component files
+- Modify `app/globals.css` for global style changes
+
+## Support & Contributing
+
+For issues, suggestions, or contributions, please open an issue or pull request in the repository.
+
+## License
+
+This project is private. Contact the maintainer for usage inquiries.
